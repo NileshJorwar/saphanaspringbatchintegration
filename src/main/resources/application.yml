@@ -1,0 +1,21 @@
+sap:
+  hana:
+    datasource:
+      hikari:
+        jdbc-url: jdbc:sap://localhost:30015/?currentschema=SAPHANABATCH
+        username: NILESH
+        password: pass
+        maximum-pool-size: 20
+spring:
+  batch:
+    job:
+      enabled: false
+    jdbc:
+      initialize-schema: always
+saphana:
+  create:
+    script: sqlQueries/create-tables-in-sap.sql
+  drop:
+    script: sqlQueries/drop-tables-in-sap.sql
+  run:
+    script: true
